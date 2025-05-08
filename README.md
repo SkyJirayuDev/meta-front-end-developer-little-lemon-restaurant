@@ -1,33 +1,65 @@
 # 🍋 Little Lemon Restaurant Website – Meta Front-End Developer Capstone
 
-This project is the final Capstone from the [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera. It’s a responsive front-end website for a fictional Mediterranean restaurant called **Little Lemon**, created to demonstrate practical front-end development skills using React and modern web technologies.
+This project is the final capstone for the [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera. It is a responsive, multi-page website for a fictional Mediterranean restaurant called **Little Lemon**, designed to demonstrate essential front-end development skills using modern React technologies.
 
-The website includes multiple pages such as a homepage, reservation form, and reusable components. It’s built with mobile-first responsive design, accessible navigation using React Router, and a clean layout styled with modern CSS techniques.
+## 🌐 Live Preview
 
-Technologies used in this project include:  
-- **React 18** for building UI components  
-- **React Router DOM 6** for multi-page navigation  
-- **Font Awesome** (`@fortawesome/*`) for vector icons  
-- **Modern Normalize** for consistent styling across browsers  
-- **React Scripts 5** for development/build tools  
-- **Jest** and **React Testing Library** for testing support  
-- **Web Vitals** for measuring performance metrics
+**[View the project here](https://skyjirayudev.github.io/Meta-front-end-developer-little-lemon-restaurant/)**
 
-To run this project locally:  
-1. Clone the repo  
-2. Run `npm install`  
-3. Start the dev server with `npm start`  
-Then open your browser at `http://localhost:3000`
+## 📌 Features
 
-The project demonstrates how to:  
-- Build modular and reusable React components  
-- Create a responsive layout that adapts to all devices  
-- Handle routing with `react-router-dom`  
-- Use form elements and simple validation logic  
-- Add iconography with Font Awesome  
-- Prepare a React app for production with build scripts
+- Modular and reusable React components  
+- Mobile-first responsive layout  
+- Client-side routing with `react-router-dom`  
+- Reservation form with basic validation  
+- Clean, accessible UI with consistent styling  
+- Font Awesome icons integration  
+- Unit testing setup with Jest and React Testing Library  
+- Performance measurement with Web Vitals
 
-This Capstone showcases practical, job-ready skills in front-end web development, and serves as a strong portfolio project for aspiring front-end developers.
+## 🔧 Tech Stack
 
-Created by **Jirayu Saisuwan (Sky)**  
+- **React 18** – UI components  
+- **React Router DOM 6** – Page navigation  
+- **Font Awesome** – Icon library  
+- **Modern Normalize** – CSS reset  
+- **React Scripts 5** – Build and dev server  
+- **Jest** + **React Testing Library** – Unit testing  
+- **Web Vitals** – Performance tracking
+
+## 🚀 Getting Started
+
+To run this project locally:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/SkyJirayuDev/Meta-front-end-developer-little-lemon-restaurant.git
+
+# 2. Navigate to the project directory
+cd Meta-front-end-developer-little-lemon-restaurant
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm start
+```
+
+Then visit `http://localhost:3000` in your browser.
+
+## 🎓 Learning Outcomes
+
+Through this capstone, I practiced and demonstrated:
+
+- Component-based architecture in React  
+- Responsive design principles for cross-device compatibility  
+- React Router for seamless navigation  
+- Form handling and validation in React  
+- Project structure and code organization best practices  
+- Testing front-end components for reliability  
+- Preparing React applications for deployment
+
+## 👨‍💻 About the Developer
+
+Created by **SkyJirayuDev**  
 For the Meta Front-End Developer Certificate – Coursera
