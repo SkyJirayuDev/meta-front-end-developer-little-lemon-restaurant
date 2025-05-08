@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.dcf139b8.css",
+    "main.js": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.8cb7f89e.js",
+    "static/js/787.b7de270b.chunk.js": "/Meta-front-end-developer-little-lemon-restaurant/static/js/787.b7de270b.chunk.js",
+    "static/media/chefs-mario-and-adrian_a.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/chefs-mario-and-adrian_a.baf0d2e31dc6977f913f.jpg",
+    "static/media/chefs-mario-and-adrian_b.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/chefs-mario-and-adrian_b.5d8cccd399ab68c5c40b.jpg",
+    "static/media/greek-salad.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/greek-salad.25fc793faeb3d58ed9fb.jpg",
+    "static/media/bruschetta.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/bruschetta.d54e450bda5efcf06010.jpg",
+    "static/media/restaurant-food.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/restaurant-food.827fb0bfe6f625329f41.jpg",
+    "static/media/lemon-dessert.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/lemon-dessert.a146cfc0ccf8ce82fae4.jpg",
+    "static/media/logo-white.png": "/Meta-front-end-developer-little-lemon-restaurant/static/media/logo-white.d09eb2af6c5a2225eedf.png",
+    "static/media/customer1.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/customer1.ccdcea01362423e8e2bf.jpg",
+    "static/media/customer3.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/customer3.ba5a7f9f30d58ab385d9.jpg",
+    "static/media/customer4.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/customer4.fa4be855aa1466a1fcb3.jpg",
+    "static/media/customer2.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/customer2.333854849cb34643a28e.jpg",
+    "static/media/logo.png": "/Meta-front-end-developer-little-lemon-restaurant/static/media/logo.e68246686f716ff6e5d8.png",
+    "index.html": "/Meta-front-end-developer-little-lemon-restaurant/index.html",
+    "main.dcf139b8.css.map": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.dcf139b8.css.map",
+    "main.8cb7f89e.js.map": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.8cb7f89e.js.map",
+    "787.b7de270b.chunk.js.map": "/Meta-front-end-developer-little-lemon-restaurant/static/js/787.b7de270b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcf139b8.css",
+    "static/js/main.8cb7f89e.js"
+  ]
+}
