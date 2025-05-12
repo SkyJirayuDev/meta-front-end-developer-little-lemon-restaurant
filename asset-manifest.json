@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.68afae9a.css",
-    "main.js": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.1ad2744e.js",
+    "main.css": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.40130bc2.css",
+    "main.js": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.0037f7a5.js",
     "static/js/787.b7de270b.chunk.js": "/Meta-front-end-developer-little-lemon-restaurant/static/js/787.b7de270b.chunk.js",
     "static/media/chefs-mario-and-adrian_a.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/chefs-mario-and-adrian_a.baf0d2e31dc6977f913f.jpg",
     "static/media/chefs-mario-and-adrian_b.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/chefs-mario-and-adrian_b.5d8cccd399ab68c5c40b.jpg",
@@ -16,12 +16,12 @@
     "static/media/customer2.jpg": "/Meta-front-end-developer-little-lemon-restaurant/static/media/customer2.333854849cb34643a28e.jpg",
     "static/media/logo.png": "/Meta-front-end-developer-little-lemon-restaurant/static/media/logo.e68246686f716ff6e5d8.png",
     "index.html": "/Meta-front-end-developer-little-lemon-restaurant/index.html",
-    "main.68afae9a.css.map": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.68afae9a.css.map",
-    "main.1ad2744e.js.map": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.1ad2744e.js.map",
+    "main.40130bc2.css.map": "/Meta-front-end-developer-little-lemon-restaurant/static/css/main.40130bc2.css.map",
+    "main.0037f7a5.js.map": "/Meta-front-end-developer-little-lemon-restaurant/static/js/main.0037f7a5.js.map",
     "787.b7de270b.chunk.js.map": "/Meta-front-end-developer-little-lemon-restaurant/static/js/787.b7de270b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68afae9a.css",
-    "static/js/main.1ad2744e.js"
+    "static/css/main.40130bc2.css",
+    "static/js/main.0037f7a5.js"
   ]
 }
