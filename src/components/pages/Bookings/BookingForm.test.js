@@ -1,105 +1,117 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import BookingForm from './BookingForm';
+import { render, screen, fireEvent } from "@testing-library/react";
+import BookingForm from "./BookingForm";
 
-describe('Booking form', () => {
-  const availableTimes = ['17:00', '17:30'];
-  const today = new Date().toISOString().split('T')[0];
-  const dispatchOnDateChange = jest.fn();
-  const submitData = jest.fn();
-
-  test('should correctly render all fields and their default values', async () => {
-    render(
-      <BookingForm availableTimes={availableTimes} submitData={submitData} />
-    );
-
-    const dateInput = screen.getByLabelText(/Date/);
-    const timeSelect = screen.getByLabelText(/Time/);
-    const timeOptions = await screen.findAllByTestId('booking-time-option');
-    const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
-    const occasionSelect = screen.getByLabelText(/Occasion/);
-    const occasionOptions = await screen.findAllByTestId(`booking-occasion-option`);
-    const submitButton = screen.getByRole('button');
-
-    expect(dateInput).toBeInTheDocument();
-    expect(dateInput).toHaveAttribute('type', 'date');
-    expect(dateInput).toHaveAttribute('id', 'booking-date');
-    expect(dateInput).toHaveValue(today);
-
-    expect(timeSelect).toBeInTheDocument();
-    expect(timeSelect).toHaveAttribute('id', 'booking-time');
-    expect(timeOptions.length).toBe(2);
-
-    expect(numberOfGuestsInput).toBeInTheDocument();
-    expect(numberOfGuestsInput).toHaveAttribute('id', 'booking-number-guests');
-    expect(numberOfGuestsInput).toHaveAttribute('type', 'number');
-    expect(numberOfGuestsInput).toHaveValue(1);
-
-    expect(occasionSelect).toBeInTheDocument();
-    expect(occasionSelect).toHaveAttribute('id', 'booking-occasion');
-    expect(occasionOptions.length).toBe(2);
-
-    expect(submitButton).toBeInTheDocument();
-    expect(submitButton).toHaveAttribute('type', 'submit');
-    expect(submitButton).toBeEnabled();
+describe("BookingForm", () => {
+  test("renders step 1 correctly", () => {
+    render(<BookingForm />);
+    expect(screen.getByText(/Seating/i)).toBeInTheDocument();
+    expect(screen.getByText(/Date/i)).toBeInTheDocument();
+    expect(screen.getByText(/Time/i)).toBeInTheDocument();
+    expect(screen.getByText(/Number of Guests/i)).toBeInTheDocument();
+    expect(screen.getByText(/Occasion/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Next/i })).toBeInTheDocument();
   });
 
-  test('should successfully submit form with default values', () => {
-    render(
-      <BookingForm availableTimes={availableTimes} submitData={submitData} />
-    );
+  test("moves to step 2 after clicking Next", () => {
+    render(<BookingForm />);
 
-    const submitButton = screen.getByRole('button');
-    fireEvent.click(submitButton);
-
-    expect(submitData).toHaveBeenCalledWith({ 
-      date: today, 
-      time: availableTimes[0], 
-      numberOfGuests: 1, 
-      occasion: 'Birthday', 
+    fireEvent.change(screen.getByLabelText(/Seating/i), {
+      target: { value: "Indoor" },
     });
+    fireEvent.change(screen.getByLabelText(/Date/i), {
+      target: { value: "2025-12-05" },
+    });
+    fireEvent.change(screen.getByLabelText(/Time/i), {
+      target: { value: "17:00" },
+    });
+    fireEvent.change(screen.getByLabelText(/Number of Guests/i), {
+      target: { value: "2" },
+    });
+    fireEvent.change(screen.getByLabelText(/Occasion/i), {
+      target: { value: "Birthday" },
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /Next/i }));
+
+    expect(screen.getByText(/First Name/i)).toBeInTheDocument();
+    expect(screen.getByText(/Last Name/i)).toBeInTheDocument();
+    expect(screen.getByText(/Email/i)).toBeInTheDocument();
+    expect(screen.getByText(/Phone/i)).toBeInTheDocument();
   });
 
-  test(
-    `should display an error message and disable sumbit button when date 
-    field's value is empty`, () => {
-    render(
-      <BookingForm 
-        availableTimes={availableTimes} 
-        dispatchOnDateChange={dispatchOnDateChange} 
-        submitData={submitData} 
-      />
+  test("shows alert if required fields are missing on final submit", () => {
+    window.alert = jest.fn();
+    render(<BookingForm />);
+
+    // Step 1 fill and next
+    fireEvent.change(screen.getByLabelText(/Seating/i), {
+      target: { value: "Indoor" },
+    });
+    fireEvent.change(screen.getByLabelText(/Date/i), {
+      target: { value: "2025-12-05" },
+    });
+    fireEvent.change(screen.getByLabelText(/Time/i), {
+      target: { value: "17:00" },
+    });
+    fireEvent.change(screen.getByLabelText(/Number of Guests/i), {
+      target: { value: "2" },
+    });
+    fireEvent.change(screen.getByLabelText(/Occasion/i), {
+      target: { value: "Birthday" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /Next/i }));
+
+    // Click confirm without filling fields
+    fireEvent.click(
+      screen.getByRole("button", { name: /Confirm Reservation/i })
     );
-
-    const dateInput = screen.getByLabelText(/Date/);
-    fireEvent.change(dateInput, { target: { value: '' } });
-    fireEvent.blur(dateInput);
-    const errorMessage = screen.getByTestId('error-message');
-    const submitButton = screen.getByRole('button');
-
-    expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveTextContent('Please choose a valid date');
-    expect(submitButton).toBeDisabled();
+    expect(window.alert).toHaveBeenCalledWith(
+      "Please fill all required fields."
+    );
   });
 
-  test(
-    `should display an error message and disable sumbit button when number of  
-    guests field's value is empty`, () => {
-    render(
-      <BookingForm 
-        availableTimes={availableTimes} 
-        dispatchOnDateChange={dispatchOnDateChange} 
-        submitData={submitData} 
-      />
+  test("submits successfully and shows confirmation", () => {
+    render(<BookingForm />);
+
+    // Step 1
+    fireEvent.change(screen.getByLabelText(/Seating/i), {
+      target: { value: "Outdoor" },
+    });
+    fireEvent.change(screen.getByLabelText(/Date/i), {
+      target: { value: "2025-12-05" },
+    });
+    fireEvent.change(screen.getByLabelText(/Time/i), {
+      target: { value: "18:00" },
+    });
+    fireEvent.change(screen.getByLabelText(/Number of Guests/i), {
+      target: { value: "4" },
+    });
+    fireEvent.change(screen.getByLabelText(/Occasion/i), {
+      target: { value: "Anniversary" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /Next/i }));
+
+    // Step 2
+    fireEvent.change(screen.getByLabelText(/First Name/i), {
+      target: { value: "John" },
+    });
+    fireEvent.change(screen.getByLabelText(/Last Name/i), {
+      target: { value: "Doe" },
+    });
+    fireEvent.change(screen.getByLabelText(/Email/i), {
+      target: { value: "john@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText(/Phone/i), {
+      target: { value: "1234567890" },
+    });
+    fireEvent.click(screen.getByLabelText(/I accept the privacy policy/i));
+
+    fireEvent.click(
+      screen.getByRole("button", { name: /Confirm Reservation/i })
     );
 
-    const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
-    fireEvent.change(numberOfGuestsInput, { target: { value: '' } });
-    fireEvent.blur(numberOfGuestsInput);
-    const errorMessage = screen.getByTestId('error-message');
-    const submitButton = screen.getByRole('button');
-
-    expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveTextContent('Please enter a number between 1 and 10');
-    expect(submitButton).toBeDisabled();
+    expect(screen.getByText(/Reservation Confirmed/i)).toBeInTheDocument();
+    expect(screen.getByText(/John Doe/)).toBeInTheDocument();
+    expect(screen.getByText(/john@example.com/)).toBeInTheDocument();
   });
 });
