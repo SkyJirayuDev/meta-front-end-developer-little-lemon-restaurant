@@ -6,6 +6,10 @@ This project is the final capstone for the [Meta Front-End Developer Professiona
 
 **[View the project here](https://skyjirayudev.github.io/Meta-front-end-developer-little-lemon-restaurant/)**
 
+## 📸 Preview Screenshot
+
+![Preview little lemon restaurant](/public/little-lemon-restaurant.png)
+
 ## 📌 Features
 
 - Modular and reusable React components  
