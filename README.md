@@ -68,6 +68,6 @@ Through this capstone, I practiced and demonstrated:
 Created by **SkyJirayuDev**  
 For the Meta Front-End Developer Certificate – Coursera
 
-- [LinkedIn Profile](https:www.linkedin.com/in/skyjirayu)  
+- [LinkedIn Profile](https://www.linkedin.com/in/skyjirayu)  
 - [View My Meta Front-End Developer Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/ZZQITDDW3XFO)  
 - Completed the [Meta Front-End Developer](https://www.coursera.org/professional-certificates/meta-front-end-developer)
