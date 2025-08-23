@@ -4,7 +4,7 @@ This project is the final capstone for the [Meta Front-End Developer Professiona
 
 ## 🌐 Live Preview
 
-**[View the project here](https://skyjirayudev.github.io/Meta-front-end-developer-little-lemon-restaurant/)**
+**[View the project here](https://skyjirayudev.github.io/meta-front-end-developer-little-lemon-restaurant/)**
 
 ## 📸 Preview Screenshot
 
